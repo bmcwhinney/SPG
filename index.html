@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Standard Practice Group: A multidisciplinary practice for design, innovation, and culture. Operating Satsuma, Brad Labs, and Christian Digital.">
+    <meta name="author" content="Bradley McWhinney">
+    <link rel="canonical" href="https://standardpractice.group">
+    
+    <title>Standard Practice Group</title>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Standard Practice Group Ltd",
+      "url": "https://standardpractice.group",
+      "email": "office@standardpractice.group",
+      "founder": "Bradley McWhinney",
+      "taxID": "16966544",
+      "subOrganization": [
+        { "@type": "Organization", "name": "Satsuma" },
+        { "@type": "Organization", "name": "Brad Labs" },
+        { "@type": "Organization", "name": "Christian Digital" },
+        { "@type": "Organization", "name": "A Cultural Understanding" }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #000000;
+            --muted: #808080;
+            --font-main: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --ease: cubic-bezier(0.19, 1, 0.22, 1);
+            
+            /* REFINED BALANCED TYPOGRAPHY */
+            --pad: clamp(1.5rem, 6vw, 6rem);
+            --h1: clamp(1.75rem, 4.5vw, 3rem); 
+            --body-text: clamp(1rem, 1.1vw, 1.15rem); 
+            --entity-text: clamp(1.2rem, 2.5vw, 2rem);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            padding: var(--pad);
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; width: 100%; }
+
+        /* REVEAL MOTION */
+        .reveal { overflow: hidden; }
+        .reveal-item { 
+            display: block; 
+            transform: translateY(110%);
+            transition: transform 1.5s var(--ease);
+        }
+        .is-visible .reveal-item { transform: translateY(0); }
+
+        /* SECTION STYLING */
+        header { margin-bottom: 12vh; }
+        h1 { 
+            font-size: var(--h1); 
+            font-weight: 600; 
+            letter-spacing: -0.03em; 
+            line-height: 1.1; 
+        }
+
+        .manifesto { max-width: 650px; margin-bottom: 18vh; }
+        .manifesto p {
+            font-size: var(--body-text);
+            letter-spacing: -0.01em;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1.2s var(--ease);
+        }
+        .manifesto.is-visible p { opacity: 1; transform: translateY(0); }
+        .manifesto.is-visible p:nth-child(2) { transition-delay: 0.1s; }
+
+        /* THE GROUP LIST (PURE TYPOGRAPHY) */
+        .group-section { border-top: 1px solid #000; padding-top: 2rem; }
+        .section-label { 
+            font-size: 0.65rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.12em; 
+            font-weight: 700; 
+            margin-bottom: 3rem; 
+        }
+
+        .entity {
+            display: block;
+            padding: clamp(1rem, 2vw, 1.5rem) 0;
+            border-bottom: 1px solid #e5e5e5;
+            cursor: default;
+        }
+
+        .entity h2 { 
+            font-size: var(--entity-text); 
+            font-weight: 500; 
+            letter-spacing: -0.02em;
+            transition: color 0.4s var(--ease);
+        }
+
+        .entity:hover h2 { color: var(--muted); }
+
+        /* FOOTER & LEGAL */
+        footer {
+            margin-top: 25vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            font-size: 0.65rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .legal-block { display: flex; flex-direction: column; gap: 0.25rem; }
+        a.contact-link { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        a.contact-link:hover { color: var(--text); }
+
+        @media (max-width: 600px) {
+            body { padding: 2rem 1.25rem; }
+            header { margin-bottom: 8vh; }
+            .manifesto { margin-bottom: 10vh; }
+            footer { flex-direction: column; gap: 2rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; transform: none !important; opacity: 1 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <header class="observe">
+            <div class="reveal">
+                <h1 class="reveal-item">Standard Practice Group</h1>
+            </div>
+        </header>
+
+        <article class="manifesto observe">
+            <p>A multidisciplinary practice for design, innovation, and culture. We operate a portfolio of specialized agencies focused on the intersection of logic and form.</p>
+            <p>Built on independence, we provide the operational infrastructure for our studios to produce high-end work, unencumbered by external interest.</p>
+        </article>
+
+        <section class="group-section observe">
+            <h2 class="section-label">The Group</h2>
+            <div class="entity-list">
+                <div class="entity"><h2>Satsuma</h2></div>
+                <div class="entity"><h2>Brad Labs</h2></div>
+                <div class="entity"><h2>Christian Digital</h2></div>
+                <div class="entity"><h2>A Cultural Understanding</h2></div>
+            </div>
+        </section>
+
+        <footer class="observe">
+            <div class="legal-block">
+                <div class="reveal"><span class="reveal-item">Standard Practice Group Ltd.</span></div>
+                <div class="reveal"><span class="reveal-item">Company No. 16966544</span></div>
+            </div>
+            
+            <div class="reveal">
+                <span class="reveal-item">
+                    <a href="mailto:office@standardpractice.group" class="contact-link">office@standardpractice.group</a>
+                </span>
+            </div>
+            
+            <div class="reveal"><span class="reveal-item">&copy; 2026 Standard Practice</span></div>
+        </footer>
+    </main>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.05 });
+
+        document.querySelectorAll('.observe').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
